@@ -82,6 +82,8 @@ Linked value keys of keys where the table is a summary of all the differences in
 
 ### SQL tables
 
+
+
 #### Main table
 
 | CVE (key) | vendor vector | NVD vector | vendor | 
@@ -90,7 +92,7 @@ Linked value keys of keys where the table is a summary of all the differences in
 #### Diffs
 
 Useful to have a derived table of diffs? This table can be each CVE and the list of all vectors, different or not. Allows summing stats later. Maybe the easiest way to calculate common values of diffs?
-
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
 | CVE (key) | vector 1 diff | vector N+1, etc.|
 | CVE-2020-12345 | True | False | False | True
 

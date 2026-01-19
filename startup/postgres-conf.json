@@ -1,0 +1,4 @@
+{"host": "localhost",
+"user": "dbuser",
+"password": "dbpass",
+"port": "12345"}
