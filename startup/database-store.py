@@ -1,4 +1,4 @@
-import psycopg2
+import psycopg
 import json
 
 def store_json_list(data_to_store):
@@ -15,7 +15,7 @@ def store_json_list(data_to_store):
     conn = None
     try:
         # 1. Connect to the database
-        conn = psycopg2.connect(**db_params)
+        conn = psycopg.connect(**db_params)
         cursor = conn.cursor()
 
         # 2. Create a table with a JSONB column (if it doesn't exist)

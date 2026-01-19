@@ -1,0 +1,3 @@
+# data directory for working copies of NVD data
+# don't need to store large data in github
+data/
