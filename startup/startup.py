@@ -31,41 +31,59 @@ except json.JSONDecodeError:
 
 # 2. scrape files in the source directory, return JSON list
 ## call source-scraper.py functions
+### need to adjust this to allow it to be modified on a per-vendor basis (currently hardcoded for Cisco)
 ## ensure we load all the json files from the directory
 
 # define the local directory where the files exist
 
-localFolder = '/data'
+localFolder = str("./data")
 
-# file_name = "/workspaces/mycvss/cve/nvd/2023/nvdcve-2.0-2023.json"
+### start of file parsing loop
+# loop through the files in the local directory and parse the contents
 
-# Define the input JSON file name
-input_json_file = "./data/2025.json"
-# Define the output CSV file name based on the input JSON file name
-output_csv_file = os.path.splitext(input_json_file)[0] + ".csv"
+for file in os.listdir(localFolder):
+    filename = os.fsdecode(file)
+    output_csv_file = os.path.splitext(input_json_file)[0] + ".csv"
+    input_json_file = localFolder + "/" + filename
+    # Define the output CSV file name based on the input JSON file name
+    
+    # Save the results to a CSV file
+    save_to_csv(extracted_comparisons, output_csv_file)
+    # Process the JSON file to extract and compare vectors
+    extracted_comparisons = process_cve_json(input_json_file)
 
-# Process the JSON file to extract and compare vectors
-extracted_comparisons = process_cve_json(input_json_file)
+    '''
+    # This old block printed to the console as a check.
+    if extracted_comparisons:
+        print("\n--- Console Output of Extracted Comparisons ---")
+        for entry in extracted_comparisons:
+            print(f"CVE ID: {entry['cve_id']}")
+            print(f"  NVD Vector: {entry['nvd_vector']}")
+            print(f"  PSIRT Vector: {entry['psirt_vector']}")
+            print(f"  Comparison Result: {entry['comparison_result']}")
+            if entry['detailed_differences']:
+                print(f"  Detailed Differences: {entry['detailed_differences']}")
+            print("-" * 30)
+    else:
+        print("No CVSS vector pairs found with both NVD and PSIRT sources for comparison.")
+    '''
+    if filename.endswith(".json"): 
+        print(os.path.join(localFolder, filename))
+        continue
+    else:
+        continue
 
-# Save the results to a CSV file
-save_to_csv(extracted_comparisons, output_csv_file)
+### end of file parsing loop
 
-if extracted_comparisons:
-    print("\n--- Console Output of Extracted Comparisons ---")
-    for entry in extracted_comparisons:
-        print(f"CVE ID: {entry['cve_id']}")
-        print(f"  NVD Vector: {entry['nvd_vector']}")
-        print(f"  PSIRT Vector: {entry['psirt_vector']}")
-        print(f"  Comparison Result: {entry['comparison_result']}")
-        if entry['detailed_differences']:
-            print(f"  Detailed Differences: {entry['detailed_differences']}")
-        print("-" * 30)
-else:
-    print("No CVSS vector pairs found with both NVD and PSIRT sources for comparison.")
-
+   
 # 2.1 for testing, also output JSON into text and CSV
 
 # 3. store the JSON list in the database
 ## create new module database-store.py with functions to store data
 
 # 4. create complimentary stats tables
+
+## using output CSV, build database of statistics
+## rework the comparison function? get stats about the entire body of derived values?
+## go line by line parsing and get counts of each differences
+## can we use previous work in previous project?

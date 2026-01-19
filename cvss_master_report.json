@@ -1,0 +1,186 @@
+{
+    "files_processed": 3,
+    "total_processed": 528,
+    "total_identical": 212,
+    "total_different": 316,
+    "metric_frequencies": {
+        "A": 139,
+        "S": 103,
+        "C": 82,
+        "I": 81,
+        "PR": 59,
+        "UI": 24,
+        "AC": 21,
+        "AV": 6
+    },
+    "value_swaps": [
+        {
+            "metric": "A",
+            "nvd_value": "H",
+            "psirt_value": "N",
+            "occurrence_count": 91
+        },
+        {
+            "metric": "S",
+            "nvd_value": "U",
+            "psirt_value": "C",
+            "occurrence_count": 81
+        },
+        {
+            "metric": "I",
+            "nvd_value": "H",
+            "psirt_value": "L",
+            "occurrence_count": 44
+        },
+        {
+            "metric": "C",
+            "nvd_value": "H",
+            "psirt_value": "L",
+            "occurrence_count": 41
+        },
+        {
+            "metric": "PR",
+            "nvd_value": "L",
+            "psirt_value": "H",
+            "occurrence_count": 32
+        },
+        {
+            "metric": "A",
+            "nvd_value": "H",
+            "psirt_value": "L",
+            "occurrence_count": 30
+        },
+        {
+            "metric": "C",
+            "nvd_value": "H",
+            "psirt_value": "N",
+            "occurrence_count": 23
+        },
+        {
+            "metric": "S",
+            "nvd_value": "C",
+            "psirt_value": "U",
+            "occurrence_count": 22
+        },
+        {
+            "metric": "AC",
+            "nvd_value": "L",
+            "psirt_value": "H",
+            "occurrence_count": 17
+        },
+        {
+            "metric": "UI",
+            "nvd_value": "N",
+            "psirt_value": "R",
+            "occurrence_count": 15
+        },
+        {
+            "metric": "I",
+            "nvd_value": "H",
+            "psirt_value": "N",
+            "occurrence_count": 13
+        },
+        {
+            "metric": "I",
+            "nvd_value": "L",
+            "psirt_value": "N",
+            "occurrence_count": 10
+        },
+        {
+            "metric": "UI",
+            "nvd_value": "R",
+            "psirt_value": "N",
+            "occurrence_count": 9
+        },
+        {
+            "metric": "A",
+            "nvd_value": "N",
+            "psirt_value": "H",
+            "occurrence_count": 9
+        },
+        {
+            "metric": "PR",
+            "nvd_value": "N",
+            "psirt_value": "H",
+            "occurrence_count": 9
+        },
+        {
+            "metric": "I",
+            "nvd_value": "N",
+            "psirt_value": "H",
+            "occurrence_count": 9
+        },
+        {
+            "metric": "C",
+            "nvd_value": "L",
+            "psirt_value": "N",
+            "occurrence_count": 7
+        },
+        {
+            "metric": "PR",
+            "nvd_value": "H",
+            "psirt_value": "L",
+            "occurrence_count": 7
+        },
+        {
+            "metric": "PR",
+            "nvd_value": "L",
+            "psirt_value": "N",
+            "occurrence_count": 6
+        },
+        {
+            "metric": "AV",
+            "nvd_value": "N",
+            "psirt_value": "L",
+            "occurrence_count": 6
+        },
+        {
+            "metric": "A",
+            "nvd_value": "N",
+            "psirt_value": "L",
+            "occurrence_count": 6
+        },
+        {
+            "metric": "C",
+            "nvd_value": "N",
+            "psirt_value": "H",
+            "occurrence_count": 5
+        },
+        {
+            "metric": "PR",
+            "nvd_value": "N",
+            "psirt_value": "L",
+            "occurrence_count": 5
+        },
+        {
+            "metric": "I",
+            "nvd_value": "N",
+            "psirt_value": "L",
+            "occurrence_count": 5
+        },
+        {
+            "metric": "AC",
+            "nvd_value": "H",
+            "psirt_value": "L",
+            "occurrence_count": 4
+        },
+        {
+            "metric": "C",
+            "nvd_value": "N",
+            "psirt_value": "L",
+            "occurrence_count": 3
+        },
+        {
+            "metric": "C",
+            "nvd_value": "L",
+            "psirt_value": "H",
+            "occurrence_count": 3
+        },
+        {
+            "metric": "A",
+            "nvd_value": "L",
+            "psirt_value": "N",
+            "occurrence_count": 3
+        }
+    ]
+}
