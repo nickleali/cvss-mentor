@@ -1,6 +1,7 @@
 # parse the NVD JSON and get a list of all the vendors present
 
 import json
+import os
 
 def extract_vendors(json_data, output_file="found_vendors.txt"):
     """
@@ -40,6 +41,16 @@ def extract_vendors(json_data, output_file="found_vendors.txt"):
     return result_list
 
 # Example Usage:
-# raw_json = """{ ... your json string ... }"""
-# unique_ids = extract_unique_source_identifiers(raw_json)
-# print(unique_ids)
+'''
+file_path = "/workspaces/python-2/cvss-mentor/data/report_2026.json"
+
+try:
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        unique_ids = extract_vendors(data, output_file="found_vendors.txt")
+        print(unique_ids)
+except FileNotFoundError:
+    print(f"Error: The file '{file_path}' was not found.")
+except json.JSONDecodeError:
+    print(f"Error: Could not decode JSON from '{file_path}'. Please check file format.")
+'''
