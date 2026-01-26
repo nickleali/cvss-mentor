@@ -1,0 +1,54 @@
+{
+    "$id": "cve.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "CVE Mentor record format",
+    "description": "A simple CVE record",
+    "required": [ "cveId", "CVSSv3_1_NVD"],
+    "cveId" : {
+        "type": "string",
+        "description":"The official CVE identifier contains the string 'CVE', followed by the year, followed by a 4 to 19 digit number. Note that the year-part of the identifier should indicate either the year the vulnerability was discovered, or the year the CVE ID is published in. CVE IDs must be unique.",
+        "pattern": "^CVE-[0-9]{4}-[0-9]{4,19}$"
+        },
+    "cweId": {
+        "type": "string",
+        "description": "CWE ID of the CWE that best describes this problemType entry.",
+        "minLength": 5,
+        "maxLength": 9,
+        "pattern": "^CWE-[1-9][0-9]*$"
+    },
+    "CVSSv3_1_NVD": {
+        "type": "string",
+        "description": "CVSS v3.1 string from NVD.",
+        "minLength": 45,
+        "maxLength": 60,
+        "pattern": "^CVSS:3\\.1.{36,}$"
+    },
+    "CVSSv3_1_vendor": {
+        "type": "string",
+        "description": "CVSS v3.1 string from the vendor.",
+        "minLength": 45,
+        "maxLength": 60,
+        "pattern": "^CVSS:3\\.1.{36,}$"
+    },
+    "CVSSv4_vendor": {
+        "type": "string",
+        "description": "CVSS v4.0 string from the vendor.",
+        "minLength": 64,
+        "maxLength": 64,
+        "pattern": "^CVSS:4\\.0.{55,}$"
+    },
+    "descriptions": {
+        "type": "object",
+        "description": "Two sets of descriptions that inform the nature of the vulnerability.",
+        "properties": {
+            "descriptionNVD": {
+            "type": "string"
+            },
+            "descriptionAutomated": {
+            "type": "string"
+            },
+        "required": ["descriptionNVD", "descriptionAutomated"],
+        "additionalProperties": false
+        }
+    }
+}
